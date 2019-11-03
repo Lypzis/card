@@ -373,7 +373,13 @@ class Home extends Component {
   }
 
   numberWithCommas = (x) => {
-    return parseFloat(x).toLocaleString('pt-BR') //'pt-BR' x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    const number = parseFloat(x).toFixed(2).split('.');
+    number[0] = number[0].split(/(?=(?:...)*$)/).join('.');
+    return number.join(',');
+
+    // first case won't return 10,50, and will instead return 10,5
+    //return parseFloat(x).toLocaleString('pt-BR') //'pt-BR' x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   addBalance = () => {
