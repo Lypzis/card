@@ -13,8 +13,9 @@ class Home extends Component {
     balanceShow: true,
     balanceShowDetails: false,
     loaded: false,
-    total: 1000.00,
+    total: 500.00,
     cheque: 0.00,
+    totalForDisplay: 500.00,
     history: [
       <li key="01" className="App__launch-list-item"> {/*this is dynamic too*/}
         <div className="App__launch-list-item-action">
@@ -70,7 +71,7 @@ class Home extends Component {
                 <p className="paragraph-1">Saldo disponível + limites</p>
 
                 <div className="App__show-money">
-                  <p id="balance" className="App__money">R${this.state.total}</p>
+                  <p id="balance" className="App__money">R${this.state.totalForDisplay}</p>
                   <a href="#" onClick={this.onEyeClick}>
                     {
                       this.state.balanceShow ?
@@ -96,15 +97,15 @@ class Home extends Component {
                         <ul className="App__balance-details-list">
                           <li className="App__balance-details-list-item">
                             <p className="paragraph-1">Saldo em conta</p>
-                            <p id="balance" className="App__money">R${this.state.total}</p>
+                            <p id="balance" className="App__money">R${this.state.totalForDisplay}</p>
                           </li>
                           <li className="App__balance-details-list-item">
                             <p className="paragraph-1">Saldo em conta + Cheque Empreendedor</p>
-                            <p id="balance" className="App__money">R${(parseFloat(this.state.total) + parseFloat(this.state.cheque)).toFixed(2)}</p>
+                            <p id="balance" className="App__money">R${this.state.totalForDisplay}</p>
                           </li>
                           <li className="App__balance-details-list-item">
                             <p className="paragraph-1">Saldo total disponível</p>
-                            <p id="balance" className="App__money">R${this.state.total}</p>
+                            <p id="balance" className="App__money">R${this.state.totalForDisplay}</p>
                           </li>
                         </ul>
                         <div className="App__balance-details-buttons">
@@ -268,7 +269,6 @@ class Home extends Component {
   }
 
   onClickNotification = () => {
-    console.log('clicked');
 
     this.setState({
       current: (
@@ -372,71 +372,73 @@ class Home extends Component {
     this.onClickBackHome();
   }
 
+  numberWithCommas = (x) => {
+    return parseFloat(x).toLocaleString('pt-BR') //'pt-BR' x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   addBalance = () => {
-    const value = Math.random() * 100;
+    let value = Math.random() * (100 - 30) + 30;
 
     const arrayTemp = [...this.state.history];
-    let newTotal = {value: this.state.total};
+    let newTotal = { ...this.state };
 
-    newTotal.value = parseFloat(newTotal.value) + value;
+    newTotal.total = parseFloat(newTotal.total) + value;
 
     const formatedTotal = (value).toFixed(2);
 
     arrayTemp.unshift(
-        <li key={value} className="App__launch-list-item"> {/*this is dynamic too*/}
-          <div className="App__launch-list-item-action">
-            <p className="paragraph-3">MASTER ANTECIPACAO</p>
-            <p className="paragraph-4">03/nov</p>
-          </div>
-          <p className="App__money App__money--3">R${formatedTotal}</p>
-        </li>
+      <li key={value} className="App__launch-list-item"> {/*this is dynamic too*/}
+        <div className="App__launch-list-item-action">
+          <p className="paragraph-3">MASTER ANTECIPACAO</p>
+          <p className="paragraph-4">03/nov</p>
+        </div>
+        <p className="App__money App__money--3">R${this.numberWithCommas(formatedTotal)}</p>
+      </li>
     );
 
     this.setState({
-      total: (newTotal.value).toFixed(2),
+      total: (newTotal.total).toFixed(2),
       cheque: 0.00,
-      history: arrayTemp
+      history: arrayTemp,
+      totalForDisplay: this.numberWithCommas(parseFloat(newTotal.total).toFixed(2))
     });
 
     this.onClickBackHome();
   }
 
   decreaseBalance = () => {
-    const value = Math.random() * 100;
+    const value = Math.random() * (30 - 0) + 0;;
 
     const arrayTemp = [...this.state.history];
-    let newTotal = {value: parseFloat(this.state.total)};
-
-    
+    let newTotal = {...this.state};
 
     let formatedTotal;
 
-    if(newTotal.value <= 0 && Math.abs(newTotal.value) > value) {
-      console.log(Math.abs(newTotal.value))
-      console.log(value)
+    if (newTotal.total <= 0 && Math.abs(newTotal.total) > value) {
 
-      newTotal.value = parseFloat(this.state.total) - parseFloat(this.state.total);
+      newTotal.total = parseFloat(this.state.total) - parseFloat(this.state.total);
 
-      formatedTotal = parseFloat(this.state.total).toFixed(2);
+      formatedTotal = parseFloat(this.state.total);
     } else {
-      newTotal.value = parseFloat(newTotal.value) - value;
-      formatedTotal = value.toFixed(2);
-  }
+      newTotal.total = parseFloat(newTotal.total) - value;
+      formatedTotal = value;
+    }
 
     arrayTemp.unshift(
-        <li key={value} className="App__launch-list-item"> {/*this is dynamic too*/}
-          <div className="App__launch-list-item-action">
-            <p className="paragraph-3">DÉBITO SEGURO</p>
-            <p className="paragraph-4">03/nov</p>
-          </div>
-          <p className="App__money App__money--2">-R${formatedTotal}</p>
-        </li>
+      <li key={value} className="App__launch-list-item"> {/*this is dynamic too*/}
+        <div className="App__launch-list-item-action">
+          <p className="paragraph-3">DÉBITO SEGURO</p>
+          <p className="paragraph-4">03/nov</p>
+        </div>
+        <p className="App__money App__money--2">-R${this.numberWithCommas(formatedTotal.toFixed(2))}</p>
+      </li>
     );
 
     this.setState({
-      total: parseFloat(newTotal.value).toFixed(2),
+      total: parseFloat(newTotal.total).toFixed(2),
       cheque: 0.00,
-      history: arrayTemp
+      history: arrayTemp,
+      totalForDisplay: this.numberWithCommas(parseFloat(newTotal.total).toFixed(2))
     });
 
     this.onClickBackHome();
@@ -478,11 +480,11 @@ class Home extends Component {
       });
     }
 
-   // find a wayt to trigger render
-   if(!this.state.loaded) {
-     this.regressiveTimer(this.addBalance);
-     this.regressiveTimer2(this.decreaseBalance);
-   }
+    // find a wayt to trigger render
+    if (!this.state.loaded) {
+      this.regressiveTimer(this.addBalance);
+      this.regressiveTimer2(this.decreaseBalance);
+    }
 
     return (
       <React.Fragment>
