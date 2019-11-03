@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.20455901.chunk.css",
+    "main.js": "/static/js/main.e2c5202f.chunk.js",
+    "main.js.map": "/static/js/main.e2c5202f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.de624908.js",
+    "runtime-main.js.map": "/static/js/runtime-main.de624908.js.map",
+    "static/js/2.3035c4ea.chunk.js": "/static/js/2.3035c4ea.chunk.js",
+    "static/js/2.3035c4ea.chunk.js.map": "/static/js/2.3035c4ea.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.246920f9d584ee19c579aa78476afe65.js": "/precache-manifest.246920f9d584ee19c579aa78476afe65.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.20455901.chunk.css.map": "/static/css/main.20455901.chunk.css.map",
+    "static/media/logotemp.jpeg": "/static/media/logotemp.f6f8ecc7.jpeg",
+    "static/media/safrapay.png": "/static/media/safrapay.73a0c6e1.png",
+    "static/media/sprite.svg": "/static/media/sprite.c1330358.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.de624908.js",
+    "static/js/2.3035c4ea.chunk.js",
+    "static/css/main.20455901.chunk.css",
+    "static/js/main.e2c5202f.chunk.js"
+  ]
+}
