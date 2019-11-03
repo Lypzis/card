@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/card/static/css/main.bf1e24ce.chunk.css",
+    "main.css": "/card/static/css/main.581b1793.chunk.css",
     "main.js": "/card/static/js/main.0ea00ede.chunk.js",
     "main.js.map": "/card/static/js/main.0ea00ede.chunk.js.map",
     "runtime-main.js": "/card/static/js/runtime-main.44a5bb7e.js",
@@ -8,16 +8,16 @@
     "static/js/2.a353975e.chunk.js": "/card/static/js/2.a353975e.chunk.js",
     "static/js/2.a353975e.chunk.js.map": "/card/static/js/2.a353975e.chunk.js.map",
     "index.html": "/card/index.html",
-    "precache-manifest.03db415e8678a8ea47c5e3d603a2b6f1.js": "/card/precache-manifest.03db415e8678a8ea47c5e3d603a2b6f1.js",
+    "precache-manifest.64abcb0aeb950e6bb377c71da732374b.js": "/card/precache-manifest.64abcb0aeb950e6bb377c71da732374b.js",
     "service-worker.js": "/card/service-worker.js",
-    "static/css/main.bf1e24ce.chunk.css.map": "/card/static/css/main.bf1e24ce.chunk.css.map",
+    "static/css/main.581b1793.chunk.css.map": "/card/static/css/main.581b1793.chunk.css.map",
     "static/media/safrapay.png": "/card/static/media/safrapay.73a0c6e1.png",
     "static/media/sprite.svg": "/card/static/media/sprite.c1330358.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.44a5bb7e.js",
     "static/js/2.a353975e.chunk.js",
-    "static/css/main.bf1e24ce.chunk.css",
+    "static/css/main.581b1793.chunk.css",
     "static/js/main.0ea00ede.chunk.js"
   ]
 }
