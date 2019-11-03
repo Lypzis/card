@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/card/static/css/main.20455901.chunk.css",
-    "main.js": "/card/static/js/main.b943e6ee.chunk.js",
-    "main.js.map": "/card/static/js/main.b943e6ee.chunk.js.map",
+    "main.css": "/card/static/css/main.bf1e24ce.chunk.css",
+    "main.js": "/card/static/js/main.c02a0c91.chunk.js",
+    "main.js.map": "/card/static/js/main.c02a0c91.chunk.js.map",
     "runtime-main.js": "/card/static/js/runtime-main.44a5bb7e.js",
     "runtime-main.js.map": "/card/static/js/runtime-main.44a5bb7e.js.map",
-    "static/js/2.3035c4ea.chunk.js": "/card/static/js/2.3035c4ea.chunk.js",
-    "static/js/2.3035c4ea.chunk.js.map": "/card/static/js/2.3035c4ea.chunk.js.map",
+    "static/js/2.a353975e.chunk.js": "/card/static/js/2.a353975e.chunk.js",
+    "static/js/2.a353975e.chunk.js.map": "/card/static/js/2.a353975e.chunk.js.map",
     "index.html": "/card/index.html",
-    "precache-manifest.7a985f6d71ba8bc398f73d2107776191.js": "/card/precache-manifest.7a985f6d71ba8bc398f73d2107776191.js",
+    "precache-manifest.5f1aa453a02232ecc404b503e802733e.js": "/card/precache-manifest.5f1aa453a02232ecc404b503e802733e.js",
     "service-worker.js": "/card/service-worker.js",
-    "static/css/main.20455901.chunk.css.map": "/card/static/css/main.20455901.chunk.css.map",
+    "static/css/main.bf1e24ce.chunk.css.map": "/card/static/css/main.bf1e24ce.chunk.css.map",
     "static/media/logotemp.jpeg": "/card/static/media/logotemp.f6f8ecc7.jpeg",
     "static/media/safrapay.png": "/card/static/media/safrapay.73a0c6e1.png",
     "static/media/sprite.svg": "/card/static/media/sprite.c1330358.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.44a5bb7e.js",
-    "static/js/2.3035c4ea.chunk.js",
-    "static/css/main.20455901.chunk.css",
-    "static/js/main.b943e6ee.chunk.js"
+    "static/js/2.a353975e.chunk.js",
+    "static/css/main.bf1e24ce.chunk.css",
+    "static/js/main.c02a0c91.chunk.js"
   ]
 }
