@@ -1,9 +1,15 @@
 .App {
   text-align: center;
+  background:#0ba20b;
+}
+
+.App__body > * {
+  max-width: 80rem;
 }
 
 .App__header {
-  background: rgb(11, 162, 11);
+  max-width: 105rem;
+  margin: 0 auto;
 }
 
 .App__logo {
@@ -14,7 +20,7 @@
 
 .App__logo--2 {
   margin-left: auto;
-  margin-bottom: 4rem;
+  margin-bottom: 14rem;
 }
 
 .App__message {
@@ -129,8 +135,8 @@
 /* body */
 .App__body {
   position: relative;
-  background:rgba(0,0,0 , .02);
-  padding: 3rem 0 10rem 0;
+  padding: 3rem 0 10rem;
+  background-image: linear-gradient(#fafafa, #fafafa);
 }
 
 .App__search {
