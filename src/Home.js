@@ -428,8 +428,8 @@ class Home extends Component {
 
     // find a wayt to trigger render
     if (!this.state.loaded) {
-      //this.regressiveTimer(this.addBalance);
-      //this.regressiveTimer2(this.decreaseBalance);
+      this.regressiveTimer(this.addBalance);
+      this.regressiveTimer2(this.decreaseBalance);
     }
 
     return (

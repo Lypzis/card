@@ -230,6 +230,18 @@
 .App__button--4 svg:first-child {
   margin-right: 1.5rem;
 }
+
+.App__button--5 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App__button--5 svg {
+  margin-left: 1rem;
+}
+
  
 .App__advertisement {
 
@@ -333,6 +345,23 @@
   background: rgb(11, 162, 11);
   margin-right: .5rem;
 }
+
+/* PAGAMENTO */
+.Pagamento {
+  margin: 2rem;
+}
+
+.Pagamento__option {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.Pagamento__option-button {
+  margin: 0;
+}
+
 
 /* utility */
 .sm-margin { margin-top: 1rem;}

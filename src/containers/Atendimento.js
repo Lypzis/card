@@ -39,7 +39,7 @@ class Atendimento extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="App notifications">
+                <div className="App">
                     <div className="notification__box-title">
                         <Link to="/">
                             <svg className="App__notification App__notification--5" >

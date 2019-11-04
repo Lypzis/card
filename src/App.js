@@ -4,6 +4,7 @@ import './App.css';
 
 import Home from './Home';
 import Atendimento from './containers/Atendimento';
+import Pagamento from './containers/Pagamento';
 
 //temp
 import sprite from './assets/icons/sprite.svg';
@@ -15,6 +16,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Switch>
+          <Route path="/card/pagamento" component={Pagamento} />
           <Route path="/card/atendimento" component={Atendimento} />
           <Route path="/card/home" component={Home} />
           <Redirect from="/" to="/card/home" />
@@ -26,12 +28,12 @@ class App extends Component {
               </svg>
               <p className="paragraph-3">Início</p>
             </NavLink>
-            <button className="App__button button-1 App__navigation-button">
+            <NavLink to="/card/pagamento" className="App__button button-1 App__navigation-button">
               <svg className="App__notification App__notification--3 App__notification--4">
                 <use xlinkHref={`${sprite}#icon-coin-dollar`}></use>
               </svg>
-              <p className="paragraph-3">Pagamento</p>
-            </button>
+              <p className="paragraph-3">Pagamentos</p>
+            </NavLink>
             <button className="App__button button-1 App__navigation-button">
               <svg className="App__notification App__notification--3 App__notification--4">
                 <use xlinkHref={`${sprite}#icon-newspaper`}></use>
