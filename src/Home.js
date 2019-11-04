@@ -37,6 +37,10 @@ class Home extends Component {
     this.onClickBackHome();
   }
 
+  componentWillUnmount(){
+    //Stop regressive timer
+  }
+
   onClickBackHome = () => {
     this.setState({
       current:

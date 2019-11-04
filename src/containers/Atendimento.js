@@ -16,7 +16,7 @@ class Atendimento extends Component {
             {name: "Pagamentos", icon: "icon-coin-dollar"},
             {name: "Cobrança", icon: "icon-coin-dollar"},
             {name: "Minhas Vendas SafraPay", icon: "icon-barcode"},
-            {name: "Segurança", icon: "icon-lock"},
+            {name: "Segurança", icon: "icon-shield"},
             {name: "Canais de Atendimento", icon: "icon-bubble2"},
             {name: "Falar com um Especialista", icon: "icon-headphones"},
         ].map(e => {
