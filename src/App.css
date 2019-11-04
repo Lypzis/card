@@ -155,6 +155,21 @@
   box-shadow: 0 .2rem .1rem rgba(0,0,0 , .2);
 }
 
+.App__search--2 {
+  width: 95%;
+  padding: 3.5rem 2rem;
+  margin: 0 auto;
+}
+
+.App__search-input--2 {
+  border: none;
+  box-shadow: none;
+  border-bottom: solid rgb(11, 162, 11);
+  border-radius: 0;
+  margin-right: 0;
+  padding: .5rem;
+}
+
 .App__menu {
   display: flex;
   justify-content: space-between;
@@ -163,6 +178,10 @@
   width: 77%;
   margin: 0 auto;
   padding: 1rem;
+}
+
+.App__menu--vertical {
+  padding-bottom: 10rem;
 }
 
 .App__button {
@@ -196,6 +215,22 @@
   margin-right: 5%;
 }
 
+.App__button--4 {
+  display: flex;
+  width: 94%;
+  margin: 0 auto 2rem;
+  align-items: center;
+  padding: .7rem 1rem;
+}
+
+.App__button--4 svg:last-child {
+  margin-left: auto;
+}
+
+.App__button--4 svg:first-child {
+  margin-right: 1.5rem;
+}
+ 
 .App__advertisement {
 
 }
@@ -254,6 +289,9 @@
   border-radius: 0;
   flex: 0 0 20%;
   box-shadow: none;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
 }
 
 /* NOTIFICATIONS */
@@ -270,6 +308,7 @@
   font-size: 2rem;
   text-align: left;
   padding: 1rem;
+  background-image: linear-gradient(#fff, #fff);
 }
 
 .notification__box {
@@ -278,6 +317,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-image: linear-gradient(#fafafa, #fafafa);
 }
 
 .notification__box-header {
@@ -293,8 +333,6 @@
   background: rgb(11, 162, 11);
   margin-right: .5rem;
 }
-
-
 
 /* utility */
 .sm-margin { margin-top: 1rem;}

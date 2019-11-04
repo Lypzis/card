@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import sprite from './icons/sprite.svg';
-
-//import qrcode from './images/qrcode.png';
-import safrapay from './images/safrapay.png';
+import sprite from './assets/icons/sprite.svg';
+import safrapay from './assets/images/safrapay.png';
 
 class Home extends Component {
 
@@ -20,7 +18,7 @@ class Home extends Component {
       <li key="01" className="App__launch-list-item"> {/*this is dynamic too*/}
         <div className="App__launch-list-item-action">
           <p className="paragraph-3">DÉBITO SEGURO</p>
-          <p className="paragraph-4">30/out</p>
+          <p className="paragraph-4">30 de out de 2019</p>
         </div>
         <p className="App__money App__money--2">-R$9,90</p>
       </li>,
@@ -28,7 +26,7 @@ class Home extends Component {
       <li key="02" className="App__launch-list-item"> {/*this is dynamic too*/}
         <div className="App__launch-list-item-action">
           <p className="paragraph-3">MASTER ANTECIPACAO</p>
-          <p className="paragraph-4">28/out</p>
+          <p className="paragraph-4">28 de out de 2019</p>
         </div>
         <p className="App__money App__money--3">R$10,35</p>
       </li>
@@ -232,38 +230,7 @@ class Home extends Component {
 
 
           </div>
-          <nav className="App__navigation">
-            <button className="App__button button-1 App__navigation-button">
-              <svg className="App__notification App__notification--3 App__notification--4">
-                <use xlinkHref={`${sprite}#icon-home3`}></use>
-              </svg>
-              <p className="paragraph-3">Início</p>
-            </button>
-            <button className="App__button button-1 App__navigation-button">
-              <svg className="App__notification App__notification--3 App__notification--4">
-                <use xlinkHref={`${sprite}#icon-coin-dollar`}></use>
-              </svg>
-              <p className="paragraph-3">Pagamento</p>
-            </button>
-            <button className="App__button button-1 App__navigation-button">
-              <svg className="App__notification App__notification--3 App__notification--4">
-                <use xlinkHref={`${sprite}#icon-newspaper`}></use>
-              </svg>
-              <p className="paragraph-3">SafraPay</p>
-            </button>
-            <button className="App__button button-1 App__navigation-button">
-              <svg className="App__notification App__notification--3 App__notification--4">
-                <use xlinkHref={`${sprite}#icon-headphones`}></use>
-              </svg>
-              <p className="paragraph-3">Atendimento</p>
-            </button>
-            <button className="App__button button-1 App__navigation-button">
-              <svg className="App__notification App__notification--3 App__notification--4">
-                <use xlinkHref={`${sprite}#icon-search`}></use>
-              </svg>
-              <p className="paragraph-3">Ver mais</p>
-            </button>
-          </nav> </React.Fragment>
+           </React.Fragment>
     });
 
   }
@@ -299,41 +266,7 @@ class Home extends Component {
               </li>
             </ul>
 
-
-
           </div>
-          <nav className="App__navigation">
-            <button className="App__button button-1 App__navigation-button">
-              <svg className="App__notification App__notification--3 App__notification--4">
-                <use xlinkHref={`${sprite}#icon-home3`}></use>
-              </svg>
-              <p className="paragraph-3">Início</p>
-            </button>
-            <button className="App__button button-1 App__navigation-button">
-              <svg className="App__notification App__notification--3 App__notification--4">
-                <use xlinkHref={`${sprite}#icon-coin-dollar`}></use>
-              </svg>
-              <p className="paragraph-3">Pagamento</p>
-            </button>
-            <button className="App__button button-1 App__navigation-button">
-              <svg className="App__notification App__notification--3 App__notification--4">
-                <use xlinkHref={`${sprite}#icon-newspaper`}></use>
-              </svg>
-              <p className="paragraph-3">SafraPay</p>
-            </button>
-            <button className="App__button button-1 App__navigation-button">
-              <svg className="App__notification App__notification--3 App__notification--4">
-                <use xlinkHref={`${sprite}#icon-headphones`}></use>
-              </svg>
-              <p className="paragraph-3">Atendimento</p>
-            </button>
-            <button className="App__button button-1 App__navigation-button">
-              <svg className="App__notification App__notification--3 App__notification--4">
-                <use xlinkHref={`${sprite}#icon-search`}></use>
-              </svg>
-              <p className="paragraph-3">Ver mais</p>
-            </button>
-          </nav>
         </React.Fragment>
       )
     });
@@ -372,6 +305,13 @@ class Home extends Component {
     this.onClickBackHome();
   }
 
+  localDate = () => {
+    const date = new Date()
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+
+    return date.toLocaleDateString('pt-BR', options);
+  }
+
   numberWithCommas = (x) => {
 
     const number = parseFloat(x).toFixed(2).split('.');
@@ -396,7 +336,7 @@ class Home extends Component {
       <li key={value} className="App__launch-list-item"> {/*this is dynamic too*/}
         <div className="App__launch-list-item-action">
           <p className="paragraph-3">MASTER ANTECIPACAO</p>
-          <p className="paragraph-4">03/nov</p>
+          <p className="paragraph-4">{this.localDate()}</p>
         </div>
         <p className="App__money App__money--3">R${this.numberWithCommas(formatedTotal)}</p>
       </li>
@@ -434,7 +374,7 @@ class Home extends Component {
       <li key={value} className="App__launch-list-item"> {/*this is dynamic too*/}
         <div className="App__launch-list-item-action">
           <p className="paragraph-3">DÉBITO SEGURO</p>
-          <p className="paragraph-4">03/nov</p>
+          <p className="paragraph-4">{this.localDate()}</p>
         </div>
         <p className="App__money App__money--2">-R${this.numberWithCommas(formatedTotal.toFixed(2))}</p>
       </li>
@@ -488,8 +428,8 @@ class Home extends Component {
 
     // find a wayt to trigger render
     if (!this.state.loaded) {
-      this.regressiveTimer(this.addBalance);
-      this.regressiveTimer2(this.decreaseBalance);
+      //this.regressiveTimer(this.addBalance);
+      //this.regressiveTimer2(this.decreaseBalance);
     }
 
     return (
